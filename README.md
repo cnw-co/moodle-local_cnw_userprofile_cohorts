@@ -1,6 +1,6 @@
 # Cohorts in profile #
 
-![](docs/splash.png?raw=true)
+![](docs/Splash.png?raw=true)
 
 A Cohorts in profile modul segítségével, minden felhasználó profilján láthatóvá válik, hogy milyen cohortokhoz lett hozzáadva manuálisan. Amennyiben jogosultságunk van ahhoz, hogy szerkesszük a cohortot, akkor az egyes cohortok linkként jelennek meg, melyre kattintva azonnal tudjuk kezelni a cohort tagjait.
 
