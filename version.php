@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_cnw_userprofile_cohorts';
 $plugin->release = '1.0.0';
-$plugin->version = 2020052505;
+$plugin->version = 2020052801;
 $plugin->requires = 2018051700;
 $plugin->maturity = MATURITY_STABLE;

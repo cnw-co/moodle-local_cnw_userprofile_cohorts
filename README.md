@@ -6,8 +6,9 @@ Cohorts in profile is a plugin that allows us to view the manually added users o
 If we have permission to edit the cohorts, they appear as clickable links on the users’ profile. By clicking on the 
 links, we can immediately manage the cohort members. 
 
-Cohort in profile is compatible with the [Smart Cohort](https://moodle.org/plugins/local_cnw_smartcohort) plugin. If we install both plugins, we are also able to 
-view the cohorts each user belongs to based on the filtering criteria of Smart Cohort.
+Cohort in profile is compatible with the [Smart Cohort](https://moodle.org/plugins/local_cnw_smartcohort) plugin. If we 
+install both plugins, we are also able to view the cohorts each user belongs to based on the filtering criteria 
+of Smart Cohort.
 
 
 ## Version support ##

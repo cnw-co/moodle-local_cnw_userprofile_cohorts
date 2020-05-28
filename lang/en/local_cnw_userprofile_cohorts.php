@@ -24,12 +24,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Cohorts in user profile';
-$string['description'] = '';
+$string['pluginname'] = 'Cohorts in profile';
+$string['description'] = 'Cohorts in profile is a plugin that allows us to view the manually added users of cohorts. ';
 $string['profile_category_title'] = 'Cohort memberships';
 $string['manual_title'] = 'Manually assigned cohorts';
 $string['smart_cohort_title'] = 'Assigned cohorts by Smart Cohort';
-$string['smart_cohort_not_installed'] = 'Smart Cohort module not installed';
-$string['smart_cohort_check_link'] = 'You can check the module offical page';
+$string['smart_cohort_not_installed'] = 'Smart Cohort plugin is not installed';
+$string['smart_cohort_check_link'] = 'You can check the plugin\'s official page';
 $string['not_in_any_cohort'] = 'Not in any cohort';
 $string['not_in_any_cohort_by_smart_cohort'] = 'Not in any cohort by Smart Cohort';
+$string['filter'] = 'Filter';
