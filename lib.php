@@ -39,14 +39,8 @@ function local_cnw_userprofile_cohorts_myprofile_navigation(core_user\output\myp
 {
     global $DB;
 
-    $usercontext = context_user::instance($user->id, MUST_EXIST);
     $systemcontext = context_system::instance();
-    $courseorusercontext = !empty($course) ? context_course::instance($course->id) : $usercontext;
     $courseorsystemcontext = !empty($course) ? context_course::instance($course->id) : $systemcontext;
-    $courseid = !empty($course) ? $course->id : SITEID;
-
-    //moodle/cohort:view
-    //moodle/cohort:assign
 
     if (isguestuser($user) || !has_capability('moodle/cohort:view', $courseorsystemcontext)) {
         return false;
@@ -56,7 +50,6 @@ function local_cnw_userprofile_cohorts_myprofile_navigation(core_user\output\myp
         get_string('profile_category_title', 'local_cnw_userprofile_cohorts'));
     $tree->add_category($category);
 
-    //Get data
     $plugins = core_plugin_manager::instance()->get_installed_plugins('local');
     $cnw_smart_cohort_is_installed = array_key_exists('cnw_smartcohort', $plugins);
     $smart_cohort_memberships = array();
@@ -103,12 +96,15 @@ function local_cnw_userprofile_cohorts_myprofile_navigation(core_user\output\myp
     foreach ($smart_cohort_memberships as $membership) {
         $cohort = $DB->get_record('cohort', ['id' => $membership->cohort_id]);
         $filter = $DB->get_record('cnw_sc_filters', ['id' => $membership->filter_id]);
-        //$$cohort_link = new moodle_url('cohort/assign.php', array('id' => $cohort->id));
         if(has_capability('moodle/cohort:assign', $courseorsystemcontext)) {
-            $filter_link = new moodle_url('local/cnw_smartcohort/edit.php?id=' . $filter->id . '&format=' . $filter->type);
-            $links[] = $cohort->name . " (Filter: " . html_writer::link($filter_link, $filter->name) . ')';
+            if($plugins['cnw_smartcohort'] <= 2019050603) {
+                $filter_link = new moodle_url('local/cnw_smartcohort/edit.php?id=' . $filter->id);
+            } else {
+                $filter_link = new moodle_url('local/cnw_smartcohort/edit.php?id=' . $filter->id . '&format=' . $filter->type);
+            }
+            $links[] = $cohort->name . " (" . get_string('filter', 'local_cnw_userprofile_cohorts') . ": " . html_writer::link($filter_link, $filter->name) . ')';
         } else {
-            $links[] = $cohort->name . " (Filter: " . $filter->name . ")";
+            $links[] = $cohort->name . " (" . get_string('filter', 'local_cnw_userprofile_cohorts') . ": " . $filter->name . ")";
         }
 
     }

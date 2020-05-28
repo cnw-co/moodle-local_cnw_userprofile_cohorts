@@ -2,13 +2,19 @@
 
 ![](docs/Splash.png?raw=true)
 
-A Cohorts in profile modul segítségével, minden felhasználó profilján láthatóvá válik, hogy milyen cohortokhoz lett hozzáadva manuálisan. Amennyiben jogosultságunk van ahhoz, hogy szerkesszük a cohortot, akkor az egyes cohortok linkként jelennek meg, melyre kattintva azonnal tudjuk kezelni a cohort tagjait.
+Cohorts in profile is a plugin that allows us to view the manually added users of cohorts. 
+If we have permission to edit the cohorts, they appear as clickable links on the users’ profile. By clicking on the 
+links, we can immediately manage the cohort members. 
 
-Amennyiben a Smart Cohort modult is telepítettük akkor láthatjuk, hogy a felhasználó milyen cohortokba került bele valamelyik Smart Cohortban megfogalmazott feltétel alapján.
+Cohort in profile is compatible with the [Smart Cohort](https://moodle.org/plugins/local_cnw_smartcohort) plugin. If we install both plugins, we are also able to 
+view the cohorts each user belongs to based on the filtering criteria of Smart Cohort.
+
 
 ## Version support ##
 
 Minimum: Moodle 3.5.4
+
+Smart Cohort: 1.0.0 (2019050603)
 
 ## Installation ##
 
